@@ -26,4 +26,4 @@ jobs:
         env:
           GOOGLE_SCRIPT_URL: ${{ secrets.GOOGLE_SCRIPT_URL }}
         run: |
-          python src/main.py
+          python src/test_feed.py
