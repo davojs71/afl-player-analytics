@@ -1,4 +1,11 @@
-import requests
+response = requests.get(
+    url,
+    params=params,
+    headers={
+        "User-Agent": "Davo-AFL-Stats/1.0 (personal research project)"
+    },
+    timeout=30
+)
 
 def main():
     url = "https://api.squiggle.com.au/"
