@@ -2,10 +2,11 @@ import requests
 
 
 def main():
-    url = "https://www.afl.com.au/matches/8123"
+    url = "https://api.afl.com.au/statspro"
 
     headers = {
-        "User-Agent": "Davo-AFL-Stats/1.0 (personal research project)"
+        "User-Agent": "Davo-AFL-Stats/1.0 (personal research project)",
+        "Accept": "application/json"
     }
 
     response = requests.get(
