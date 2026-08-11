@@ -15,7 +15,35 @@ def main():
     )
 
     print("Status:", response.status_code)
-    print(response.text[:30000])
+
+    text = response.text
+
+    searches = [
+        "createServerFn",
+        "handler",
+        "game",
+        "match",
+        "player",
+        "stats",
+        "gameLog",
+        "gameLogs",
+        "statistics",
+        "playerStats",
+        "matchStats",
+    ]
+
+    for term in searches:
+        print("\n--- Searching for:", term, "---")
+
+        position = text.lower().find(term.lower())
+
+        if position == -1:
+            print("Not found")
+        else:
+            print("FOUND at position:", position)
+            start = max(0, position - 500)
+            end = min(len(text), position + 1500)
+            print(text[start:end])
 
 
 if __name__ == "__main__":
