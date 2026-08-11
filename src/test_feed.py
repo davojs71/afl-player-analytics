@@ -1,7 +1,9 @@
 import requests
 
 
-def fetch(url):
+def main():
+    url = "https://www.footyinfo.com/assets/stats-Dts8JUIc.js"
+
     headers = {
         "User-Agent": "Davo-AFL-Stats/1.0 (personal research project)"
     }
@@ -12,26 +14,8 @@ def fetch(url):
         timeout=30
     )
 
-    print("\n========================================")
-    print(url)
-    print("========================================")
     print("Status:", response.status_code)
     print(response.text[:30000])
-
-
-def main():
-
-    base = "https://www.footyinfo.com/assets/"
-
-    files = [
-        "stats-DwgRxqhL.js",
-        "stats-table-ChJkV7O8.js",
-        "stats-verification-service-rbM6ULUE.js",
-        "stats-Dts8JUIc.js",
-    ]
-
-    for filename in files:
-        fetch(base + filename)
 
 
 if __name__ == "__main__":
