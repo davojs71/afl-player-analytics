@@ -1,8 +1,9 @@
 import requests
+import re
 
 
 def main():
-    url = "https://www.footyinfo.com/stats"
+    url = "https://www.footyinfo.com/assets/api-Bjlb_5WW.js"
 
     headers = {
         "User-Agent": "Davo-AFL-Stats/1.0 (personal research project)"
@@ -15,7 +16,7 @@ def main():
     )
 
     print("Status:", response.status_code)
-    print(response.text[:10000])
+    print(response.text[:20000])
 
 
 if __name__ == "__main__":
